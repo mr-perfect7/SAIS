@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAIntellect Solutions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+    body {
+      font-family: "Inter", sans-serif;
+      width: 100%;
+      height: 100%;
+    }
+
+    .sec1-img {
+      background-image: url(https://i.pinimg.com/originals/90/70/32/9070324cdfc07c68d60eed0c39e77573.gif);
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    
+    .mobile-menu.open {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+
+    @media (max-width: 768px) {
+      .sec1-img {
+        background-position: 70% center;
+      }
+      
+      .sec1-left, .sec1-right {
+        width: 100% !important;
+        padding: 20px;
+        align-items: center !important;
+        text-align: center;
+      }
+      
+      .sec1-left h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+      }
+      
+      .sec1-left p {
+        font-size: 1rem !important;
+      }
+      
+      .why-choose-title {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1rem !important;
+      }
+      
+      .feature-card {
+        height: auto !important;
+        padding: 1.5rem !important;
+      }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .features-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="main w-full h-full overflow-hidden">
+     
+      <header
+        class="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg"
+      >
+        <div class="px-4">
+          <div class="flex items-center justify-between">
+            <div class="flex shrink-0">
+              <a aria-current="page" class="flex items-center" href="/">
+                <img
+                  class="h-7 w-auto"
+                  src="https://saintellectsolutions.com/images/logo-2.png"
+                  alt="SAIntellect Solutions Logo"
+                />
+                <p class="sr-only">SAIntellect Solutions</p>
+              </a>
+            </div>
+         
+            <div
+              class="hidden md:flex md:items-center md:justify-center md:gap-5"
+            >
+              <a
+                aria-current="page"
+                class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                href="#"
+                >Why SAIS</a
+              >
+
+              <a
+                class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                href="#"
+                >DIGITAL MARKETING</a
+              >
+              <a
+                class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                href="#"
+                >DESIGNING</a
+              >
+              <a
+                class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                href="#"
+                >DEVELOPMENT</a
+              >
+              <a
+                class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                href="#"
+                >REACH US</a
+              >
+            </div>
+            
+            <div class="flex items-center justify-end gap-3">
+              <a
+                class="hidden items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-all duration-150 hover:bg-gray-50 sm:inline-flex"
+                href="/https://saintellectsolutions.com/ai.php"
+                >AI</a
+              >
+              
+              <!-- Mobile menu button -->
+              <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Mobile Navigation -->
+          <div class="mobile-menu md:hidden bg-white mt-2 rounded-lg shadow-lg" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Why SAIS</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">DIGITAL MARKETING</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">DESIGNING</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">DEVELOPMENT</a>
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">REACH US</a>
+              <a href="/https://saintellectsolutions.com/ai.php" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">AI</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="h-screen w-screen flex justify-center items-center pt-16 md:pt-0">
+        <div
+          class="sec1-img bg-white p-15 rounded-lg flex flex-col md:flex-row shadow-md h-[65%] w-[85%]"
+        >
+          <div
+            class="sec1-left h-full w-full md:w-1/2 flex items-center md:items-end justify-center md:justify-center flex-col gap-2 p-6"
+          >
+            <h1 class="text-3xl md:text-5xl text-white font-bold text-center md:text-right">
+              <span class="text-yellow-400"><q>SAIntellect Solutions</q></span>
+              Build Stunning Digital Experiences.
+            </h1>
+            <p class="text-lg md:text-xl text-white italic text-center md:text-right">
+              We craft fast, responsive, and user-friendly websites tailored to
+              your brand. Let's create something amazing together.
+            </p>
+          </div>
+          <div class="sec1-right h-full w-full md:w-1/2 flex justify-center md:justify-end items-center p-4">
+            <div
+              class="h-[100px] w-full md:w-[300px] text-blue-800 flex flex-col sm:flex-row justify-center items-center gap-4"
+            >
+              <div
+                class="bg-white h-12 w-full sm:w-40 flex rounded-full px-3 justify-center items-center cursor-pointer hover:bg-gray-100 transition"
+              >
+                <h4 class="font-medium text-black">Enquiry Now</h4>
+              </div>
+              <div
+                class="border-white border-2 h-12 w-full sm:w-40 flex rounded-full px-3 justify-center items-center cursor-pointer hover:bg-white/20 transition"
+              >
+                <h4 class="font-medium text-white">Learn More</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Web Development Section -->
+      <section class="min-h-screen w-screen flex justify-center items-center px-4 py-12 md:py-0">
+        <div class="w-full md:w-[90%] h-full">
+          <div
+            class="flex flex-col md:flex-row pt-12 px-6 md:px-20 items-center justify-center bg-hero md:h-screen overflow-hidden"
+          >
+            <div class="flex flex-col gap-6 md:flex-row items-center max-w-8xl w-full">
+              <div class="w-full md:w-1/2 lg:pr-8 xl:pr-16">
+                <h2
+                  class="text-3xl md:text-4xl lg:text-5xl text-center md:text-left text-green-900 leading-tight font-medium"
+                >
+                 Web Development
+                </h2>
+                <br>
+                <h3 class="text-xl md:text-2xl text-center md:text-left text-green-800 italic"
+                >
+                  World-Class Website Development
+                </h3>
+                <br>
+                <p
+                  class="text-gray-500 text-sm md:text-base"
+                >
+                  Are you looking for a highly skilled website development
+                  company? Then you are in the right place. We are one of the
+                  leading web development companies in London. We are best known
+                  for our world-class website design experiences and
+                  technology-driven web solutions to drive performance and growth
+                  for our clients
+                </p>
+                <br>
+                <p class="text-gray-500 text-sm md:text-base">
+                  We make all of our websites in a CMS as standard making it easy to update images or content in the future without any extra cost. We also take account of the latest SEO techniques in the websites which make it possible for it to rank well on Google organically.
+                </p>
+              </div>
+              <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
+                <img class="rounded-2xl w-full max-w-md" src="https://i.pinimg.com/736x/97/be/32/97be3235348d11a969e51598a3d6d86e.jpg" alt="Web Development" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose SAIS Section -->
+      <section class="w-screen py-12 md:py-24 px-4">
+        <div class="w-full flex items-center justify-center mb-8 md:mb-16">
+          <h1 class="text-3xl md:text-4xl font-bold text-green-900 why-choose-title">Why Choose SAIS?</h1>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 features-grid">
+            <!-- card1 -->
+            <div class="h-auto p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition feature-card">
+              <div class="h-20 flex items-center justify-center">
+                <img
+                  src="https://saintellectsolutions.com/images/rv-37-icon1.png"
+                  alt="Technology Skilled"
+                  class="h-16"
+                />
+              </div>
+              <div class="h-16 flex items-center justify-center">
+                <h2 class="text-xl md:text-2xl text-green-900 font-bold text-center">
+                  Technology Skilled
+                </h2>
+              </div>
+              <div
+                class="text-gray-500 text-center text-sm md:text-base"
+              >
+                <p>
+                  We host a team with over a hundred domain experts with more than
+                  a decade of experience who are leading the market and technology
+                  trends.
+                </p>
+              </div>
+            </div>
+            <!-- card end -->
+
+            <!-- card2 -->
+            <div class="h-auto p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition feature-card">
+              <div class="h-20 flex items-center justify-center">
+                <img
+                  src="https://saintellectsolutions.com/images/rv-37-icon2.png"
+                  alt="Superior User Interface"
+                  class="h-16"
+                />
+              </div>
+              <div class="h-16 flex items-center justify-center">
+                <h2 class="text-xl md:text-2xl text-green-900 font-bold text-center">
+                  Superior User Interface
+                </h2>
+              </div>
+              <div
+                class="text-gray-500 text-center text-sm md:text-base"
+              >
+                <p>
+                  We ensure to deliver a responsive user interface that is
+                  extremely customizable and flexible. Our superior UX designs
+                  assure high customer interaction.
+                </p>
+              </div>
+            </div>
+            <!-- card end -->
+
+            <!-- card3 -->
+            <div class="h-auto p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition feature-card">
+              <div class="h-20 flex items-center justify-center">
+                <img
+                  src="https://saintellectsolutions.com/images/rv-37-icon3.png"
+                  alt="Quality Adherence"
+                  class="h-16"
+                />
+              </div>
+              <div class="h-16 flex items-center justify-center">
+                <h2 class="text-xl md:text-2xl text-green-900 font-bold text-center">
+                  Quality Adherence
+                </h2>
+              </div>
+              <div
+                class="text-gray-500 text-center text-sm md:text-base"
+              >
+                <p>
+                  We adhere to the best coding guidelines and quality standards as
+                  we don't believe in compromising the quality of services.
+                </p>
+              </div>
+            </div>
+            <!-- card end -->
+
+            <!-- card4 -->
+            <div class="h-auto p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition feature-card">
+              <div class="h-20 flex items-center justify-center">
+                <img
+                  src="https://saintellectsolutions.com/images/rv-37-icon4.png"
+                  alt="Minimal Maintenance"
+                  class="h-16"
+                />
+              </div>
+              <div class="h-16 flex items-center justify-center">
+                <h2 class="text-xl md:text-2xl text-green-900 font-bold text-center">
+                  Minimal Maintenance
+                </h2>
+              </div>
+              <div
+                class="text-gray-500 text-center text-sm md:text-base"
+              >
+                <p>
+                  Our web development solutions need minimal to zero maintenance.
+                  It generates long term benefits by minimizing costs.
+                </p>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="w-screen py-12 md:py-24 bg-white px-4">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col items-center text-center mb-12">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-900 mb-4">
+              Let's have Quick Discussion
+            </h2>
+            <p class="text-lg text-gray-500 max-w-3xl">
+              Looking for digital experts? Contact us now.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <!-- Phone Card -->
+            <div
+              class="flex items-center gap-4 p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-md transition-all w-full sm:w-auto"
+            >
+              <div class="text-green-900 text-2xl">
+                <i class="ri-phone-line"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-lg font-medium text-green-900">
+                  +91 - 707-721-1601
+                </p>
+                <p class="text-gray-500 text-sm sm:text-base">Call us anytime</p>
+              </div>
+            </div>
+
+            <!-- Live Chat Card -->
+            <div
+              class="flex items-center gap-4 p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-md transition-all w-full sm:w-auto"
+            >
+              <div class="text-green-900 text-2xl">
+                <i class="ri-chat-3-line"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-lg font-medium text-green-900">Live Chat</p>
+                <p class="text-gray-500 text-sm sm:text-base">To discuss your project</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center mt-12">
+            <a
+              href="#contact"
+              class="flex items-center px-6 py-3 bg-green-900 text-white rounded-md hover:bg-green-800 transition-colors text-sm sm:text-base"
+            >
+              Get Free Consultation
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-green-900 text-white pt-12 pb-8 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
+          >
+            <!-- Logo and Social -->
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <img src="https://saintellectsolutions.com/images/logo-2.png" alt="SAIntellect Solutions Logo" class="w-40 md:w-48 lg:w-56">
+              </div>
+              <p class="text-white text-sm md:text-base">
+                Building innovative solutions for the modern world.
+              </p>
+              <div class="flex flex-wrap gap-2 md:gap-3">
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-mail-line text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-phone-line text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-skype-line text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-whatsapp-line text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-linkedin-fill text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-twitter-line text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-instagram-line text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-facebook-circle-line text-lg md:text-xl"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400 transition"><i class="ri-youtube-line text-lg md:text-xl"></i></a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-4 text-white">
+              <h3 class="text-lg font-semibold">Quick Links</h3>
+              <ul class="space-y-2 text-white">
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >Why SAIS</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >SEO</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >Custom</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >Design</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Other Links -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold">Services</h3>
+              <ul class="space-y-2 text-white">
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >Website Development</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-yellow-400 transition text-sm md:text-base"
+                    >Career</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold">Contact Us</h3>
+              <address class="not-italic text-white text-sm md:text-base">
+                <p> Plot no- HIG-143, Flat- 101, 1st Floor Backgate of Buddha Jayanti Park, Lumbini Vihar, Chandrasekharpur, Bhubaneswar, Odisha 7510</p>
+                <p class="mt-2">
+                  Email:
+                  <a
+                    href="mailto:info@company.com"
+                    class="hover:text-yellow-400 transition"
+                    >sales@saintellectsolutions(dot)com</a
+                  >
+                </p>
+                <p>
+                  Phone:
+                  <a href="tel:+11234567890" class="hover:text-yellow-400 transition"
+                    >0674-356-3588 | +91-707-721-1601</a
+                  >
+                </p>
+              </address>
+            </div>
+          </div>
+
+          <div
+            class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center"
+          >
+            <p class="text-white text-sm text-center md:text-left mb-4 md:mb-0">
+              ©2025 SAIntellect Solutions. All Rights Reserved.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-white hover:text-yellow-400 transition text-sm">Privacy Policy</a>
+              <a href="#" class="text-white hover:text-yellow-400 transition text-sm">Terms of Service</a>
+              <a href="#" class="text-white hover:text-yellow-400 transition text-sm">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+    
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+      });
+      
+   
+      const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+        });
+      });
+    </script>
+  </body>
+</html>
